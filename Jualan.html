@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toko Luxury</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --gold:#d4af37;
+  --dark:#0b0b0b;
+  --glass:rgba(255,255,255,0.08);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#050505,#0f0f0f);
+  color:#fff;
+}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:15px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  backdrop-filter:blur(10px);
+  background:rgba(0,0,0,0.6);
+  border-bottom:1px solid var(--gold);
+  z-index:100;
+}
+
+nav h1{
+  font-family:'Playfair Display',serif;
+  color:var(--gold);
+}
+
+.cart{
+  cursor:pointer;
+  position:relative;
+}
+
+.cart span{
+  position:absolute;
+  top:-8px;
+  right:-8px;
+  background:var(--gold);
+  color:#000;
+  border-radius:50%;
+  padding:2px 7px;
+  font-size:12px;
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:120px 8% 60px;
+}
+
+.hero-box{
+  background:var(--glass);
+  backdrop-filter:blur(15px);
+  padding:60px;
+  border-radius:25px;
+  box-shadow:0 0 60px rgba(212,175,55,0.2);
+}
+
+.hero-box h2{
+  font-family:'Playfair Display',serif;
+  font-size:3rem;
+  color:var(--gold);
+}
+
+.hero-box p{
+  margin:20px 0 35px;
+}
+
+.hero-box button{
+  padding:15px 45px;
+  border:none;
+  border-radius:50px;
+  background:linear-gradient(45deg,#d4af37,#fff3a0);
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* PRODUK */
+section{
+  padding:80px 8%;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.title h3{
+  font-family:'Playfair Display',serif;
+  font-size:2.4rem;
+  color:var(--gold);
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.product{
+  background:var(--glass);
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid rgba(212,175,55,0.3);
+  transition:.4s;
+}
+
+.product:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 40px rgba(212,175,55,0.4);
+}
+
+.product img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.product .info{
+  padding:20px;
+}
+
+.product h4{
+  color:var(--gold);
+}
+
+.price{
+  margin:10px 0;
+  font-weight:600;
+}
+
+.product button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(45deg,#d4af37,#fff3a0);
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* CART */
+.cart-box{
+  position:fixed;
+  right:-100%;
+  top:0;
+  width:320px;
+  height:100%;
+  background:#0b0b0b;
+  padding:20px;
+  transition:.4s;
+  z-index:200;
+}
+
+.cart-box.active{
+  right:0;
+}
+
+.cart-box h3{
+  color:var(--gold);
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.cart-item{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10px;
+  font-size:14px;
+}
+
+.total{
+  margin:20px 0;
+  font-weight:600;
+}
+
+.checkout{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(45deg,#d4af37,#fff3a0);
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero-box h2{font-size:2.2rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <h1>TOKO LUXURY</h1>
+  <div class="cart" onclick="toggleCart()">🛒<span id="count">0</span></div>
+</nav>
+
+<div class="hero">
+  <div class="hero-box">
+    <h2>Produk Premium Eksklusif</h2>
+    <p>Kualitas terbaik dengan sentuhan kemewahan</p>
+    <button onclick="scrollToProduk()">Belanja Sekarang</button>
+  </div>
+</div>
+
+<section id="produk">
+  <div class="title">
+    <h3>Produk Kami</h3>
+  </div>
+
+  <div class="products">
+    <div class="product">
+      <img src="fto03.jpg">
+      <div class="info">
+        <h4>Produk A</h4>
+        <div class="price">Rp 150.000</div>
+        <button onclick="addCart('Produk A',150000)">Tambah</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="fto01.jpg/400/300?2">
+      <div class="info">
+        <h4>Produk B</h4>
+        <div class="price">Rp 250.000</div>
+        <button onclick="addCart('Produk B',250000)">Tambah</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://picsum.photos/400/300?3">
+      <div class="info">
+        <h4>Produk C</h4>
+        <div class="price">Rp 350.000</div>
+        <button onclick="addCart('Produk C',350000)">Tambah</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cart-box" id="cartBox">
+  <h3>Keranjang</h3>
+  <div id="cartItems"></div>
+  <div class="total">Total: Rp <span id="total">0</span></div>
+  <button class="checkout" onclick="checkout()">Checkout WhatsApp</button>
+</div>
+
+<script>
+let cart=[];
+let total=0;
+
+function toggleCart(){
+  document.getElementById('cartBox').classList.toggle('active');
+}
+
+function addCart(name,price){
+  cart.push({name,price});
+  total+=price;
+  document.getElementById('count').innerText=cart.length;
+  renderCart();
+}
+
+function renderCart(){
+  let box=document.getElementById('cartItems');
+  box.innerHTML='';
+  cart.forEach(item=>{
+    box.innerHTML+=`
+      <div class="cart-item">
+        <span>${item.name}</span>
+        <span>Rp ${item.price}</span>
+      </div>`;
+  });
+  document.getElementById('total').innerText=total;
+}
+
+function checkout(){
+  let text='Pesanan:%0A';
+  cart.forEach(i=>{
+    text+=`${i.name} - Rp ${i.price}%0A`;
+  });
+  text+=`Total: Rp ${total}`;
+  window.open(`https://wa.me/628XXXXXXXXX?text=${text}`);
+}
+
+function scrollToProduk(){
+  document.getElementById('produk').scrollIntoView({behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>

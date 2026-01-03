@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Santri - PP. Hidayatul Mubtadi'in</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #C5A059;
+            --white: #FFFFFF;
+            --bg-overlay: rgba(0, 0, 0, 0.85);
+            --glass: rgba(255, 255, 255, 0.04);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #000; color: var(--white); font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+
+        .background-scene {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(var(--bg-overlay), var(--bg-overlay)), url('fto03.jpg');
+            background-size: cover; background-position: center; z-index: -1;
+        }
+
+        main { height: 100vh; overflow-y: scroll; scroll-snap-type: y mandatory; scrollbar-width: none; }
+        main::-webkit-scrollbar { display: none; }
+
+        section {
+            min-height: 100vh; width: 100%; display: flex; justify-content: center; 
+            align-items: center; scroll-snap-align: start; padding: 80px 20px;
+        }
+
+        .main-card {
+            width: 100%; max-width: 1000px; background: var(--glass);
+            backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+            border: 1px solid var(--border); border-radius: 40px;
+            padding: 50px; text-align: center; box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+        }
+
+        h1, h2 { font-family: 'Playfair Display', serif; margin-bottom: 10px; }
+        .tagline { color: var(--gold); text-transform: uppercase; letter-spacing: 5px; font-size: 0.7rem; margin-bottom: 20px; display: block; }
+        .divider { width: 40px; height: 1px; background: var(--gold); margin: 25px auto; }
+
+        /* Form Styling - More Detailed */
+        .form-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; text-align: left; }
+        .form-header { grid-column: span 2; color: var(--gold); font-size: 0.8rem; letter-spacing: 2px; border-bottom: 1px solid var(--border); padding-bottom: 5px; margin: 15px 0 5px 0; text-transform: uppercase; }
+        
+        .input-group { display: flex; flex-direction: column; }
+        .input-group label { font-size: 0.65rem; color: var(--white); opacity: 0.6; text-transform: uppercase; margin-bottom: 8px; }
+        
+        .input-group input, .input-group select, .input-group textarea {
+            width: 100%; background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+            padding: 12px; border-radius: 12px; color: white; outline: none; font-size: 0.9rem; transition: 0.3s;
+        }
+        .input-group input:focus { border-color: var(--gold); background: rgba(255,255,255,0.07); }
+
+        .btn-action {
+            grid-column: span 2; background: var(--gold); color: #000; padding: 18px;
+            border-radius: 15px; border: none; font-weight: 700; cursor: pointer; margin-top: 25px;
+            text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
+        }
+        .btn-action:hover { opacity: 0.9; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2); }
+
+        /* Dokumentasi Grid */
+        .doc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
+        .doc-img { width: 100%; height: 180px; border-radius: 20px; object-fit: cover; border: 1px solid var(--border); transition: 0.4s; }
+        .doc-img:hover { transform: scale(1.03); border-color: var(--gold); }
+
+        /* Social Dock */
+        .social-dock {
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+            display: flex; gap: 30px; z-index: 100;
+        }
+        .social-link { color: white; opacity: 0.5; font-size: 1.4rem; transition: 0.3s; }
+        .social-link:hover { opacity: 1; color: var(--gold); transform: translateY(-5px); }
+
+        @media (max-width: 768px) {
+            .main-card { padding: 30px; margin-top: 20px; }
+            .form-container, .doc-grid { grid-template-columns: 1fr; }
+            .form-header, .btn-action { grid-column: span 1; }
+            section { height: auto; scroll-snap-align: none; padding: 40px 15px; }
+            main { overflow-y: auto; scroll-snap-type: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-scene"></div>
+
+    <div class="social-dock">
+        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <main>
+        <section>
+            <div class="main-card">
+                <span class="tagline">Official Portal</span>
+                <h1>Hidayatul Mubtadi'in</h1>
+                <p style="opacity: 0.6; font-size: 0.8rem; letter-spacing: 2px;">Kertosono - Nganjuk</p>
+                <div class="divider"></div>
+                <p style="max-width: 600px; margin: 0 auto; opacity: 0.8; font-weight: 300; line-height: 1.8;">
+                    Membangun peradaban Islam melalui pendidikan yang luhur dan akhlak mulia.
+                </p>
+                <p style="margin-top: 60px; font-size: 0.7rem; color: var(--gold); letter-spacing: 3px; animation: pulse 2s infinite;">GULIR KE BAWAH</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="main-card">
+                <span class="tagline">Mengenal Pengasuh</span>
+                <div style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap; text-align: left;">
+                    <img src="kyai.jpg" style="width: 220px; height: 220px; border-radius: 30px; border: 1px solid var(--gold); padding: 5px; object-fit: cover;" alt="Pengasuh">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h2 style="color: var(--gold);">KH. Ahmad Fauzi</h2>
+                        <div style="width: 30px; height: 2px; background: var(--gold); margin: 15px 0;"></div>
+                        <p style="font-size: 0.9rem; opacity: 0.8; line-height: 1.8;">
+                            Dedikasi beliau dalam mengasuh santri menitikberatkan pada kemandirian dan kedalaman ilmu agama sebagai bekal menghadapi era modern.
+                        </p>
+                        <p style="font-style: italic; opacity: 0.6; margin-top: 15px; font-size: 0.85rem;">"Pondok adalah rumah ilmu, santri adalah penjaga cahayanya."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="main-card">
+                <span class="tagline">Gallery</span>
+                <h2>Dokumentasi Kegiatan</h2>
+                <div class="divider"></div>
+                <div class="doc-grid">
+                    <img src="photo.jpg" class="doc-img">
+                    <img src="photo.jpg" class="doc-img">
+                    <img src="photo.jpg" class="doc-img">
+                    <img src="photo.jpg" class="doc-img">
+                    <img src="photo.jpg" class="doc-img">
+                    <img src="photo.jpg" class="doc-img">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="main-card">
+                <span class="tagline">Admission</span>
+                <h2>Formulir Pendaftaran</h2>
+                <div class="divider"></div>
+                
+                <form class="form-container">
+                    <div class="form-header">Data Pribadi Santri</div>
+                    <div class="input-group">
+                        <label>Nama Lengkap</label>
+                        <input type="text" placeholder="Sesuai Ijazah">
+                    </div>
+                    <div class="input-group">
+                        <label>NIK (No. Induk Kependudukan)</label>
+                        <input type="number" placeholder="16 Digit NIK">
+                    </div>
+                    <div class="input-group">
+                        <label>Tempat & Tanggal Lahir</label>
+                        <input type="text" placeholder="Contoh: Nganjuk, 12 Mei 2010">
+                    </div>
+                    <div class="input-group">
+                        <label>Jenis Kelamin</label>
+                        <select>
+                            <option>Laki-laki</option>
+                            <option>Perempuan</option>
+                        </select>
+                    </div>
+
+                    <div class="form-header">Informasi Pendidikan</div>
+                    <div class="input-group">
+                        <label>Sekolah Asal</label>
+                        <input type="text" placeholder="Nama Sekolah Sebelumnya">
+                    </div>
+                    <div class="input-group">
+                        <label>Alamat Sekolah Asal</label>
+                        <input type="text" placeholder="Kota/Kabupaten">
+                    </div>
+                    <div class="input-group">
+                        <label>Program Pilihan</label>
+                        <select>
+                            <option>SMA Islam Al-Qodir</option>
+                            <option>Madrasah Diniyah Salaf</option>
+                            <option>Tahfidzul Qur'an</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>NISN</label>
+                        <input type="number" placeholder="Nomor Induk Siswa Nasional">
+                    </div>
+
+                    <div class="form-header">Data Orang Tua / Wali</div>
+                    <div class="input-group">
+                        <label>Nama Ayah / Ibu / Wali</label>
+                        <input type="text" placeholder="Nama Lengkap Wali">
+                    </div>
+                    <div class="input-group">
+                        <label>WhatsApp Wali</label>
+                        <input type="tel" placeholder="08xxxxxxxxxx">
+                    </div>
+                    <div class="input-group" style="grid-column: span 2;">
+                        <label>Alamat Rumah Lengkap</label>
+                        <textarea rows="2" placeholder="Dusun, RT/RW, Desa, Kecamatan, Kabupaten"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-action">Kirim Data Pendaftaran</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <style>
+        @keyframes pulse {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; transform: translateY(5px); }
+            100% { opacity: 0.3; }
+        }
+    </style>
+</body>
+</html>
